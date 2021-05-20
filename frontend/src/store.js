@@ -42,8 +42,10 @@ const reducer = combineReducers({
     productUpdate: productUpdateReducer,
     productDelete: productDeleteReducer,
     orderList: orderListReducer,
+    orderDeliver: orderDeliverReducer,
     userList: userListReducer,
     userDelete: userDeleteReducer,
+    orderDelete: orderDeleteReducer,
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
