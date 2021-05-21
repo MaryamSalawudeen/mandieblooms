@@ -7,6 +7,7 @@ const data = {
             email: 'fragilecoder@gmail.com',
             password: bcrypt.hashSync('salawudeen', 8),
             isAdmin: true,
+            isSeller: true,
         },
         {
             name: 'Oye',
