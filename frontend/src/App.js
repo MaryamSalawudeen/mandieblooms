@@ -73,7 +73,7 @@ const userSignin = useSelector((state) => state.userSignin);
               <i className="fa fa-bars"></i>
             </button>
 
-                <Link className="brand" to="/">MandieBlooms</Link>
+                <Link className="brand" to="/">MandieShop</Link>
             </div>
             <div>
             <Route
