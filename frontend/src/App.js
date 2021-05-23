@@ -29,6 +29,8 @@ import LoadingBox from './components/LoadingBox';
 import MessageBox from './components/MessageBox';
 import MapScreen from './screens/MapScreen';
 import DashboardScreen from './screens/DashboardScreen';
+import SupportScreen from './screens/SupportScreen';
+import ChatBox from './components/ChatBox';
 
 
 function App() {
@@ -142,6 +144,9 @@ const userSignin = useSelector((state) => state.userSignin);
                   <li>
                     <Link to="/userlist">Users</Link>
                   </li>
+                  <li>
+                    <Link to="/support">Support</Link>
+                  </li>
                 </ul>
               </div>
             )}
@@ -207,6 +212,7 @@ const userSignin = useSelector((state) => state.userSignin);
             <AdminRoute path="/userlist" component={UserListScreen}></AdminRoute>
             <AdminRoute path="/user/:id/edit" component={UserEditScreen}></AdminRoute>
             <AdminRoute path="/dashboard" component={DashboardScreen}></AdminRoute>
+            <AdminRoute path="/support" component={SupportScreen}></AdminRoute>
             <SellerRoute path="/productlist/seller" component={ProductListScreen}></SellerRoute>
             <SellerRoute path="/orderlist/seller" component={OrderListScreen}></SellerRoute>
 
@@ -214,7 +220,10 @@ const userSignin = useSelector((state) => state.userSignin);
             <Route path="/" component = {HomeScreen} exact></Route> 
     
         </main>
-        <footer className="row center">All Rights Reserved</footer>
+        <footer className="row center">
+          {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
+          <div>All right reserved</div>{' '}
+        </footer>
     </div>
     </BrowserRouter>
     );
